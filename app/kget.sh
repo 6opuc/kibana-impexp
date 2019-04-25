@@ -14,5 +14,5 @@ fi
 
 curl --silent \
 	-X GET \
-	"$base_url/api/saved_objects/_find?per_page=1000&type=index-pattern&type=dashboard&type=visualization&type=search&fields=id&fields=type" \
+	"$base_url/api/saved_objects/_find?per_page=1000&type=config&type=index-pattern&type=dashboard&type=visualization&type=search&fields=id&fields=type" \
 	| jq '[.saved_objects[] | {type: .type, id: .id}]'
