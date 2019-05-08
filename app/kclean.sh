@@ -14,6 +14,8 @@ if [ "x" == "x$base_url" ]; then
 	base_url=http://kibana:5601
 fi
 
+./kwait.sh -u $base_url
+
 echo getting objects from $base_url
 objects_json=$(./kget.sh -u $base_url)
 object_count=$(echo $objects_json | jq 'length')

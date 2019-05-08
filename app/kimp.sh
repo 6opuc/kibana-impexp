@@ -19,6 +19,8 @@ if [ "x" == "x$input_file_path" ]; then
 	input_file_path=./export.json
 fi
 
+./kwait.sh -u $base_url
+
 echo importing objects from $input_file_path to $base_url
 http_response=$(
 	curl --silent \

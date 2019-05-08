@@ -19,6 +19,8 @@ if [ "x" == "x$output_file_path" ]; then
 	output_file_path=./export.json
 fi
 
+./kwait.sh -u $base_url
+
 echo getting objects from $base_url
 objects_json=$(./kget.sh -u $base_url)
 object_count=$(echo $objects_json | jq 'length')
